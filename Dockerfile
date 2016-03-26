@@ -22,6 +22,9 @@ ADD run.sh /bin/run.sh
 
 ENTRYPOINT ["/bin/run.sh"]
 
+ENV JAVA_MIN_MEM 128m
+ENV JAVA_MAX_MEM 3096m
+
 # Add and explode the server.war to /server.war directory
 RUN apk add --no-cache --virtual .build-deps curl \
  && curl -L -O https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux32 \
