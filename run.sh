@@ -17,7 +17,6 @@ JAVA_OPTS="-Xms$JAVA_MIN_MEM -Xmx$JAVA_MAX_MEM -Xdebug -Xrunjdwp:server=y,transp
 MAINCLASS=$(grep "Main-Class: " "$DEPLOY/META-INF/MANIFEST.MF" | cut -d ' ' -f2 | sed -e 's/[[:space:]]//g')
 
 exec java $JAVA_OPTS -cp "$DEPLOY" \
--Dlogging.config=$DIR_CONFIG/logback.xml \
 -Ddebug \
 -Dserver.port=8080 \
 -Dspring.config.location=$DIR_CONFIG/ \
